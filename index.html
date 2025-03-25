@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barış Teklifi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        img {
+            width: 200px; /* Resim boyutu (isteğe göre değiştirilebilir) */
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            position: absolute;
+        }
+        #evet {
+            background-color: green;
+            color: white;
+        }
+        #hayir {
+            background-color: red;
+            color: white;
+            left: 120px; /* 'Hayır' butonunun sağ tarafa doğru hizalanması */
+            top: 0; /* 'Hayır' butonunun doğru hizada olması için top değeri */
+            transition: left 0.1s, top 0.1s;
+        }
+        .hayir-hover {
+            left: 200px; /* 'Hayır' butonu hareket ettirildiğinde yeni konum */
+            top: 50px; /* 'Hayır' butonunun biraz yukarı kayması */
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.imgur.com/n34j5Gn.jpg" alt="Barış Resmi">
+    <h2>Benimle barışmak istiyor musun?</h2>
+    <div class="buttons">
+        <button id="evet" onclick="evetTiklandi()">Evet</button>
+        <button id="hayir" onmouseover="kac()">Hayır</button>
+    </div>
+    <script>
+        function evetTiklandi() {
+            window.open("thankyou.html", "_blank"); // Yönlendirme sayfası açılır
+        }
+
+        function kac() {
+            let hayir = document.getElementById("hayir");
+            hayir.classList.add("hayir-hover");
+        }
+
+        document.getElementById("hayir").addEventListener("mouseleave", function() {
+            let hayir = document.getElementById("hayir");
+            hayir.classList.remove("hayir-hover");
+        });
+    </script>
+</body>
+</html>
