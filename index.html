@@ -21,6 +21,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0; /* Sayfa kenarlarında boşluk bırakmamak için */
+            overflow: hidden; /* Sayfa boyutunun dışına çıkmasını engelliyoruz */
         }
         img {
             width: 150px; /* Resmi küçültüyoruz */
@@ -71,8 +72,8 @@
             let hayir = document.getElementById("hayir");
 
             // Sayfa boyutlarına göre rastgele konum
-            let x = Math.random() * (window.innerWidth - hayir.offsetWidth);
-            let y = Math.random() * (window.innerHeight - hayir.offsetHeight);
+            let x = Math.random() * (window.innerWidth - hayir.offsetWidth - 20); // Kenarlarda boşluk bırakıyoruz
+            let y = Math.random() * (window.innerHeight - hayir.offsetHeight - 20); // Kenarlarda boşluk bırakıyoruz
 
             // Butonun pozisyonunu absolute yapıyoruz
             hayir.style.position = "absolute";
