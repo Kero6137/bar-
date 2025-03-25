@@ -37,6 +37,7 @@
             cursor: pointer;
             margin: 5px;
             position: relative;
+            transition: all 0.3s ease-in-out; /* Buton hareketini yumuşatmak için */
         }
         #evet {
             background-color: green;
@@ -45,9 +46,6 @@
         #hayir {
             background-color: red;
             color: white;
-            left: 120px; /* 'Hayır' butonunun sağ tarafa doğru hizalanması */
-            top: 0; /* 'Hayır' butonunun doğru hizada olması için top değeri */
-            transition: left 0.1s, top 0.1s;
         }
     </style>
 </head>
@@ -58,6 +56,7 @@
         <button id="evet" onclick="evetTiklandi()">Evet</button>
         <button id="hayir" onmouseover="kac()">Hayır</button>
     </div>
+
     <script>
         function evetTiklandi() {
             window.open("thankyou.html", "_blank"); // Yönlendirme sayfası açılır
@@ -65,8 +64,9 @@
 
         function kac() {
             let hayir = document.getElementById("hayir");
-            let x = Math.random() * (window.innerWidth - 200); // Sayfanın genişliği içinde rastgele X konumu
-            let y = Math.random() * (window.innerHeight - 50); // Sayfanın yüksekliği içinde rastgele Y konumu
+            let x = Math.random() * (window.innerWidth - hayir.offsetWidth); // Sayfanın genişliği içinde rastgele X konumu
+            let y = Math.random() * (window.innerHeight - hayir.offsetHeight); // Sayfanın yüksekliği içinde rastgele Y konumu
+            hayir.style.position = "absolute"; // Butonu sayfa üzerinde hareket ettirebilmek için absolute yapıyoruz
             hayir.style.left = x + "px"; // X koordinatını güncelle
             hayir.style.top = y + "px";  // Y koordinatını güncelle
         }
