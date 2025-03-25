@@ -14,25 +14,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 80vh; /* Sayfa boyutunu küçültüyoruz */
+            width: 80vw; /* Sayfa boyutunu küçültüyoruz */
             flex-direction: column;
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            margin: 0; /* Sayfa kenarlarında boşluk bırakmamak için */
         }
         img {
-            width: 200px; /* Resim boyutu (isteğe göre değiştirilebilir) */
+            width: 150px; /* Resmi küçültüyoruz */
         }
         h2 {
-            margin-top: 20px;
+            margin-top: 15px;
+            font-size: 1.2rem; /* Başlık boyutunu küçültüyoruz */
         }
         .buttons {
-            margin-top: 20px;
+            margin-top: 15px;
             position: relative;
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 8px 16px; /* Butonları küçültüyoruz */
+            font-size: 14px; /* Buton yazı boyutunu küçültüyoruz */
             border: none;
             cursor: pointer;
             margin: 5px;
@@ -46,13 +49,13 @@
         #hayir {
             background-color: red;
             color: white;
-            position: relative; /* Hayır butonunun pozisyonunu değiştiriyoruz */
+            position: relative;
             transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <img src="https://i.imgur.com/n34j5Gn.jpg" alt="Barış Resmi">
+    <img src="https://i.imgur.com/9mlw9Qu.jpg" alt="Barış Resmi">
     <h2>Benimle barışmak istiyor musun?</h2>
     <div class="buttons">
         <button id="evet" onclick="evetTiklandi()">Evet</button>
