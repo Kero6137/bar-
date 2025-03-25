@@ -37,7 +37,7 @@
             cursor: pointer;
             margin: 5px;
             position: relative;
-            transition: all 0.3s ease-in-out; /* Buton hareketini yumuşatmak için */
+            transition: all 0.3s ease-in-out;
         }
         #evet {
             background-color: green;
@@ -46,6 +46,8 @@
         #hayir {
             background-color: red;
             color: white;
+            position: relative; /* Hayır butonunun pozisyonunu değiştiriyoruz */
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -64,11 +66,15 @@
 
         function kac() {
             let hayir = document.getElementById("hayir");
-            let x = Math.random() * (window.innerWidth - hayir.offsetWidth); // Sayfanın genişliği içinde rastgele X konumu
-            let y = Math.random() * (window.innerHeight - hayir.offsetHeight); // Sayfanın yüksekliği içinde rastgele Y konumu
-            hayir.style.position = "absolute"; // Butonu sayfa üzerinde hareket ettirebilmek için absolute yapıyoruz
-            hayir.style.left = x + "px"; // X koordinatını güncelle
-            hayir.style.top = y + "px";  // Y koordinatını güncelle
+
+            // Sayfa boyutlarına göre rastgele konum
+            let x = Math.random() * (window.innerWidth - hayir.offsetWidth);
+            let y = Math.random() * (window.innerHeight - hayir.offsetHeight);
+
+            // Butonun pozisyonunu absolute yapıyoruz
+            hayir.style.position = "absolute";
+            hayir.style.left = x + "px";
+            hayir.style.top = y + "px";
         }
     </script>
 </body>
